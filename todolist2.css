@@ -28,4 +28,12 @@ h1{
     border-radius: 15px;
     background-color: white;
     font-size: 15px;
+    font-weight: bold;
+}
+
+.container{
+    height: 70px;
+    width: 250px;
+    display: flex;
+    background-color: aquamarine;
 }

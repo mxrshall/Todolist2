@@ -11,3 +11,17 @@ add.addEventListener("click", function(){
 })
 
 let fromprestorage = JSON.parse(localStorage.getItem("uloha"))
+
+fromprestorage.forEach(function(uloha){
+        let container = document.createElement("div")
+        let paragraph = document.createElement("p")
+    
+        paragraph.textContent = uloha
+    
+        container.setAttribute("class", "container")
+        document.body.appendChild(container)
+        container.appendChild(paragraph)
+    })
+}
+
+
