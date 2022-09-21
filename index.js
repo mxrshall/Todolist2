@@ -14,13 +14,20 @@ add.addEventListener("click", function () {
 fromprestorage.forEach(function (uloha) {
     var container = document.createElement("div");
     var paragraph = document.createElement("p");
-    var checkmark = document.createElement("div");
+    var checkmark = document.createElement("button");
     paragraph.textContent = uloha;
     container.setAttribute("class", "container");
     checkmark.setAttribute("class", "checkmark");
     document.body.appendChild(container);
     container.appendChild(paragraph);
     container.appendChild(checkmark);
+
+    checkmark.addEventListener("click", function(){
+        document.body.removeChild(container);
+        container.removeChild(paragraph);
+        container.removeChild(checkmark);
+        localStorage.removeItem("uloha")
+    });
 });
 
 function render(){
@@ -34,9 +41,11 @@ function render(){
     container.appendChild(paragraph);
     container.appendChild(checkmark);
     uloha.value = ""
-}
 
-checkmark.addEventListener("click", function(){
-    document.body.removeChild(container);
-    localStorage.removeItem("uloha")
-});
+    checkmark.addEventListener("click", function(){
+        document.body.removeChild(container);
+        container.removeChild(paragraph);
+        container.removeChild(checkmark);
+        localStorage.removeItem("uloha")
+    });
+}
