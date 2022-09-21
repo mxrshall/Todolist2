@@ -14,18 +14,29 @@ add.addEventListener("click", function () {
 fromprestorage.forEach(function (uloha) {
     var container = document.createElement("div");
     var paragraph = document.createElement("p");
+    var checkmark = document.createElement("div");
     paragraph.textContent = uloha;
     container.setAttribute("class", "container");
+    checkmark.setAttribute("class", "checkmark");
     document.body.appendChild(container);
     container.appendChild(paragraph);
+    container.appendChild(checkmark);
 });
 
 function render(){
     var container = document.createElement("div");
     var paragraph = document.createElement("p");
+    var checkmark = document.createElement("button");
     paragraph.textContent = uloha.value;
     container.setAttribute("class", "container");
+    checkmark.setAttribute("class", "checkmark");
     document.body.appendChild(container);
     container.appendChild(paragraph);
+    container.appendChild(checkmark);
     uloha.value = ""
 }
+
+checkmark.addEventListener("click", function(){
+    document.body.removeChild(container);
+    localStorage.removeItem("uloha")
+});
