@@ -18,6 +18,7 @@ fromprestorage.forEach(function (uloha) {
     paragraph.textContent = uloha;
     container.setAttribute("class", "container");
     checkmark.setAttribute("class", "checkmark");
+    paragraph.setAttribute("class", "paragraph");
     document.body.appendChild(container);
     container.appendChild(paragraph);
     container.appendChild(checkmark);
@@ -37,6 +38,7 @@ function render(){
     paragraph.textContent = uloha.value;
     container.setAttribute("class", "container");
     checkmark.setAttribute("class", "checkmark");
+    paragraph.setAttribute("class", "paragraph");
     document.body.appendChild(container);
     container.appendChild(paragraph);
     container.appendChild(checkmark);
