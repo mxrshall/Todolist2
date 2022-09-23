@@ -1,5 +1,6 @@
 var add = document.getElementById("add");
 var uloha = document.getElementById("uloha");
+let sound = new Audio("checkmark.mp3");
 var storage = [];
 
 var fromprestorage = JSON.parse(localStorage.getItem("uloha"));
@@ -28,6 +29,7 @@ fromprestorage.forEach(function (uloha) {
         container.removeChild(paragraph);
         container.removeChild(checkmark);
         localStorage.removeItem("uloha")
+        sound.play()
     });
 });
 
@@ -49,5 +51,6 @@ function render(){
         container.removeChild(paragraph);
         container.removeChild(checkmark);
         localStorage.removeItem("uloha")
+        sound.play()
     });
 }
